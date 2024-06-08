@@ -2,8 +2,11 @@ package com.deptech.helper;
 
 import com.deptech.constant.GlobalMessage;
 import com.deptech.dto.request.KategoriProdukRequest;
+import com.deptech.dto.request.ProdukRequest;
 import com.deptech.dto.response.KategoriProdukResponse;
+import com.deptech.dto.response.ProdukResponse;
 import com.deptech.entity.KategoriProduk;
+import com.deptech.entity.Produk;
 import com.deptech.exception.BusinessException;
 
 public final class EntityHelper {
@@ -24,6 +27,27 @@ public final class EntityHelper {
                 .id(kategoriProduk.getId())
                 .namaKategoriProduk(kategoriProduk.getNamaKategoriProduk())
                 .deskripsiKategoriProduk(kategoriProduk.getDeskripsiKategoriProduk())
+                .build();
+    }
+
+    public static Produk toProduk(ProdukRequest request, KategoriProduk kategoriProduk) {
+        return Produk.builder()
+                .namaProduk(request.getNamaProduk())
+                .deskripsiProduk(request.getDeskripsiProduk())
+                .gambarProduk(request.getGambarProduk())
+                .kategoriProduk(kategoriProduk)
+                .stokProduk(request.getStokProduk())
+                .build();
+    }
+
+    public static ProdukResponse toProdukResponse(Produk produk) {
+        return ProdukResponse.builder()
+                .id(produk.getId())
+                .namaProduk(produk.getNamaProduk())
+                .deskripsiProduk(produk.getDeskripsiProduk())
+                .gambarProduk(produk.getGambarProduk())
+                .kategoriProduk(toKategoriProdukResponse(produk.getKategoriProduk()))
+                .stokProduk(produk.getStokProduk())
                 .build();
     }
 }

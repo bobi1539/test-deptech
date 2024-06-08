@@ -50,13 +50,7 @@ public class KategoriProdukServiceImpl implements KategoriProdukService {
     @Override
     public List<KategoriProdukResponse> list() {
         List<KategoriProduk> kategoriProduks = kategoriProdukRepository.findAll();
-        return kategoriProduks.stream().map(
-                kategoriProduk -> KategoriProdukResponse.builder()
-                        .id(kategoriProduk.getId())
-                        .namaKategoriProduk(kategoriProduk.getNamaKategoriProduk())
-                        .deskripsiKategoriProduk(kategoriProduk.getDeskripsiKategoriProduk())
-                        .build()
-        ).toList();
+        return kategoriProduks.stream().map(EntityHelper::toKategoriProdukResponse).toList();
     }
 
     private KategoriProduk findKategoriProdukById(Long id) {

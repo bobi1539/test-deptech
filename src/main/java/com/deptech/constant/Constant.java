@@ -13,7 +13,7 @@ public final class Constant {
     public static final String INTERNAL_SERVER_ERROR = "Internal server error";
     public static final String NAME_REQUIRED = "Name is required";
     public static final String PRICE_REQUIRED = "Price is required";
-    public static final String ITEM_NOT_EXIST = "Item not exist";
+    public static final String PRODUK_NOT_EXIST = "Produk Tidak Tersedia";
     public static final String KATEGORI_PRODUK_NOT_EXIST = "Kategori Produk Tidak Tersedia";
     public static final String ORDER_NOT_EXIST = "Order not exist";
     public static final String NAMA_KATEGORI_REQUIRED = "Nama Kategori Produk Tidak Boleh Kosong";

@@ -10,6 +10,6 @@ public final class Endpoint {
 
     public static final String BASE = "/api/test-deptech";
     public static final String KATEGORI_PRODUK = BASE + "/kategories-produk";
-    public static final String INVENTORY = BASE + "/inventories";
+    public static final String PRODUK = BASE + "/produks";
     public static final String ORDER = BASE + "/orders";
 }
