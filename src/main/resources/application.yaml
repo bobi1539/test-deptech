@@ -3,14 +3,14 @@ server:
   host: localhost:8080
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
-    username: bobirival
-    password: password@147
-    url: jdbc:postgresql://localhost:5432/test_deptech
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    url: jdbc:mysql://localhost:3306/test_deptech
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.MySQLDialect
