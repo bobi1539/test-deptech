@@ -1,10 +1,13 @@
 package com.deptech.helper;
 
 import com.deptech.constant.GlobalMessage;
+import com.deptech.dto.request.AdminRequest;
 import com.deptech.dto.request.KategoriProdukRequest;
 import com.deptech.dto.request.ProdukRequest;
+import com.deptech.dto.response.AdminResponse;
 import com.deptech.dto.response.KategoriProdukResponse;
 import com.deptech.dto.response.ProdukResponse;
+import com.deptech.entity.Admin;
 import com.deptech.entity.KategoriProduk;
 import com.deptech.entity.Produk;
 import com.deptech.exception.BusinessException;
@@ -48,6 +51,27 @@ public final class EntityHelper {
                 .gambarProduk(produk.getGambarProduk())
                 .kategoriProduk(toKategoriProdukResponse(produk.getKategoriProduk()))
                 .stokProduk(produk.getStokProduk())
+                .build();
+    }
+
+    public static Admin toAdmin(AdminRequest request) {
+        return Admin.builder()
+                .namaDepan(request.getNamaDepan())
+                .namaBelakang(request.getNamaBelakang())
+                .email(request.getEmail())
+                .tanggalLahir(request.getTanggalLahir())
+                .jenisKelamin(request.getJenisKelamin())
+                .build();
+    }
+
+    public static AdminResponse toAdminResponse(Admin admin) {
+        return AdminResponse.builder()
+                .id(admin.getId())
+                .namaDepan(admin.getNamaDepan())
+                .namaBelakang(admin.getNamaBelakang())
+                .email(admin.getEmail())
+                .tanggalLahir(admin.getTanggalLahir())
+                .jenisKelamin(admin.getJenisKelamin())
                 .build();
     }
 }
