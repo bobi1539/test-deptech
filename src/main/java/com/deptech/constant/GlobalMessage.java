@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 public enum GlobalMessage {
     SUCCESS(HttpStatus.OK, Constant.SUCCESS),
     ITEM_NOT_EXIST(HttpStatus.BAD_REQUEST, Constant.ITEM_NOT_EXIST),
-    INVENTORY_NOT_EXIST(HttpStatus.BAD_REQUEST, Constant.INVENTORY_NOT_EXIST),
+    KATEGORI_PRODUK_NOT_EXIST(HttpStatus.BAD_REQUEST, Constant.KATEGORI_PRODUK_NOT_EXIST),
     ORDER_NOT_EXIST(HttpStatus.BAD_REQUEST, Constant.ORDER_NOT_EXIST),
     ITEM_STOCK_INSUFFICIENT(HttpStatus.BAD_REQUEST, Constant.ITEM_STOCK_INSUFFICIENT),
     ITEM_CANNOT_DELETE(HttpStatus.BAD_REQUEST, Constant.ITEM_CANNOT_DELETE),
