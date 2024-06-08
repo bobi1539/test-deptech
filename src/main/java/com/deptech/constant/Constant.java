@@ -21,9 +21,12 @@ public final class Constant {
     public static final String WRONG_EMAIL_OR_PASSWORD = "Email Atau Password Salah";
     public static final String LOGIN_ID_NOT_VALID = "Login Id Tidak Valid";
     public static final String ALREADY_LOGIN = "Email Tersebut Telah Login";
+    public static final String OUT_OF_STOCK = "Stok Tidak Mencukupi";
     public static final String NAMA_DEPAN_REQUIRED = "Nama Depan Tidak Boleh Kosong";
     public static final String NAMA_BELAKANG_REQUIRED = "Nama Belakang Tidak Boleh Kosong";
     public static final String EMAIL_REQUIRED = "Email Tidak Boleh Kosong";
     public static final String TANGGAL_LAHIR_REQUIRED = "Tanggal Lahir Tidak Boleh Kosong";
     public static final String PASSWORD_REQUIRED = "Password Tidak Boleh Kosong";
+    public static final String PRODUK_ID_REQUIRED = "Produk Id Tidak Boleh Kosong";
+    public static final String JUMLAH_PRODUK_REQUIRED = "Jumlah Produk Tidak Boleh Kosong";
 }

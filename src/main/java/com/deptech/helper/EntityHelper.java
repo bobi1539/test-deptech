@@ -4,17 +4,12 @@ import com.deptech.constant.GlobalMessage;
 import com.deptech.dto.request.AdminRequest;
 import com.deptech.dto.request.KategoriProdukRequest;
 import com.deptech.dto.request.ProdukRequest;
-import com.deptech.dto.response.AdminResponse;
-import com.deptech.dto.response.KategoriProdukResponse;
-import com.deptech.dto.response.LoginResponse;
-import com.deptech.dto.response.ProdukResponse;
-import com.deptech.entity.Admin;
-import com.deptech.entity.KategoriProduk;
-import com.deptech.entity.Login;
-import com.deptech.entity.Produk;
+import com.deptech.dto.response.*;
+import com.deptech.entity.*;
 import com.deptech.exception.BusinessException;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public final class EntityHelper {
 
@@ -92,6 +87,25 @@ public final class EntityHelper {
                 .id(login.getId())
                 .admin(toAdminResponse(login.getAdmin()))
                 .loginTime(login.getLoginTime())
+                .build();
+    }
+
+    public static TransaksiProdukResponse toTransaksiProdukResponse(TransaksiProduk transaksiProduk) {
+        return TransaksiProdukResponse.builder()
+                .id(transaksiProduk.getId())
+                .produk(toProdukResponse(transaksiProduk.getProduk()))
+                .jumlahProduk(transaksiProduk.getJumlahProduk())
+                .build();
+    }
+
+    public static TransaksiResponse toTransaksiResponse(Transaksi transaksi, List<TransaksiProduk> transaksiProduks) {
+        return TransaksiResponse.builder()
+                .id(transaksi.getId())
+                .tipeTransaksi(transaksi.getTipeTransaksi())
+                .tanggalTransaksi(transaksi.getTanggalTransaksi())
+                .transaksiProduks(
+                        transaksiProduks.stream().map(EntityHelper::toTransaksiProdukResponse).toList()
+                )
                 .build();
     }
 }
