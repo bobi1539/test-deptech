@@ -6,11 +6,15 @@ import com.deptech.dto.request.KategoriProdukRequest;
 import com.deptech.dto.request.ProdukRequest;
 import com.deptech.dto.response.AdminResponse;
 import com.deptech.dto.response.KategoriProdukResponse;
+import com.deptech.dto.response.LoginResponse;
 import com.deptech.dto.response.ProdukResponse;
 import com.deptech.entity.Admin;
 import com.deptech.entity.KategoriProduk;
+import com.deptech.entity.Login;
 import com.deptech.entity.Produk;
 import com.deptech.exception.BusinessException;
+
+import java.time.LocalDateTime;
 
 public final class EntityHelper {
 
@@ -72,6 +76,22 @@ public final class EntityHelper {
                 .email(admin.getEmail())
                 .tanggalLahir(admin.getTanggalLahir())
                 .jenisKelamin(admin.getJenisKelamin())
+                .build();
+    }
+
+    public static Login toLogin(Admin admin) {
+        return Login.builder()
+                .admin(admin)
+                .email(admin.getEmail())
+                .loginTime(LocalDateTime.now())
+                .build();
+    }
+
+    public static LoginResponse toLoginResponse(Login login) {
+        return LoginResponse.builder()
+                .id(login.getId())
+                .admin(toAdminResponse(login.getAdmin()))
+                .loginTime(login.getLoginTime())
                 .build();
     }
 }

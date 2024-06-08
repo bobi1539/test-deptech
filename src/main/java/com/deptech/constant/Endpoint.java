@@ -12,4 +12,5 @@ public final class Endpoint {
     public static final String KATEGORI_PRODUK = BASE + "/kategories-produk";
     public static final String PRODUK = BASE + "/produks";
     public static final String ADMIN = BASE + "/admins";
+    public static final String AUTH = BASE + "/auths";
 }

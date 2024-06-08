@@ -18,7 +18,9 @@ public final class Constant {
     public static final String NAMA_PRODUK_REQUIRED = "Nama Produk Tidak Boleh Kosong";
     public static final String STOK_PRODUK_REQUIRED = "Stok Produk Tidak Boleh Kosong";
     public static final String EMAIL_ALREADY_EXIST = "Email Telah Terdaftar";
-    public static final String ITEM_CANNOT_DELETE = "Item cannot be delete";
+    public static final String WRONG_EMAIL_OR_PASSWORD = "Email Atau Password Salah";
+    public static final String LOGIN_ID_NOT_VALID = "Login Id Tidak Valid";
+    public static final String ALREADY_LOGIN = "Email Tersebut Telah Login";
     public static final String NAMA_DEPAN_REQUIRED = "Nama Depan Tidak Boleh Kosong";
     public static final String NAMA_BELAKANG_REQUIRED = "Nama Belakang Tidak Boleh Kosong";
     public static final String EMAIL_REQUIRED = "Email Tidak Boleh Kosong";
